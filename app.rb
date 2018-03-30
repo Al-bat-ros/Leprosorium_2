@@ -14,6 +14,8 @@ end
 
 class Comment < ActiveRecord::Base
   belongs_to :post
+  validates :name, presence: true, length: { minimum: 3 }
+  validates :content, presence: true, length: { minimum: 1 }
 end
 
 before do
